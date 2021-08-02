@@ -31,6 +31,9 @@
             <column name="currency_code" type="VARCHAR(3)">
                 <constraints nullable="false"/>
             </column>
-        </createTable>
+            <column name="abc_xyz" type="VARCHAR(3)">
+              <constraints nullable="true"/>
+          </column>
+      </createTable>
     </changeSet>
 </databaseChangeLog>
