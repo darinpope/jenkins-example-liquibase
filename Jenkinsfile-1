@@ -2,7 +2,7 @@ pipeline {
   agent any
   stages {
     stage('Test') {
-      stage{
+      steps{
         bat 'cd /Users/mramirhe/Documents/demo_integracion_db/examples/sql'
       }
       steps {
