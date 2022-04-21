@@ -4,7 +4,8 @@ pipeline {
     stage('Test') {
       steps{
         bat 'cd /Users/mramirhe/Documents/demo_integracion_db/examples/sql'
-       bat 'liquibase update'
+        bat 'DIR'
+        bat 'liquibase update'
       }
     }
   }
