@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-       bat 'cd'
+       bat 'liquibase -verison'
       }
     }
   }
