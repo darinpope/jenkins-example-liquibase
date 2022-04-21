@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Test') {
       stage{
-        bat 'cd  C:\Users\mramirhe\Documents\demo_integracion_db\examples\sql'
+        bat 'cd \Users\mramirhe\Documents\demo_integracion_db\examples\sql'
       }
       steps {
        bat 'liquibase update'
