@@ -1,9 +1,15 @@
 pipeline {
   agent any
   stages {
-    stage('Test') {
+    stage('Validate') {
+      steps{
+        bat 'liquibase validate'
+      }
+    }
+    stage('Deploy') {
       steps{
         bat 'liquibase update'
+        bat 'liquibase % BUILD_NUMBER%%'
       }
     }
   }
