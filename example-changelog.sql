@@ -13,7 +13,7 @@ CREATE TABLE cats_demo_three(
     edge varchar(255)
 );
 --changeset dev:2
-CREATE TABLE cats_demo_three(
+CREATE TABLE cats_demo_four(
     breed VARCHAR(255),
     name varchar(255),
     edge varchar(255)
