@@ -9,7 +9,7 @@ pipeline {
     stage('Deploy') {
       steps{
         bat 'liquibase update'
-        bat 'liquibase % BUILD_NUMBER%%'
+        bat 'liquibase tag % BUILD_NUMBER%%'
       }
     }
   }
