@@ -34,10 +34,6 @@ CREATE TABLE cats_demo_four(
     edge varchar(255)
 );
 
---changeset dev:8
-Drop TABLE cats_depmo_four;
-
-
 --changeset mauricio_ramirezh:1
 CREATE TABLE coches(
     breed VARCHAR(255),
