@@ -1,4 +1,5 @@
 --liquibase formatted sql
+
 --changeset dev:1
 CREATE TABLE cats_demo_two(
     breed VARCHAR(255),
@@ -21,6 +22,7 @@ CREATE TABLE cats_demo_four(
     name varchar(255),
     edge varchar(255)
 );
+--rollback drop table cats_demo_four; 
 
 --changeset dev:6
 DROP TABLE cats_demo_four;
@@ -33,4 +35,13 @@ CREATE TABLE cats_demo_four(
 );
 
 --changeset dev:8
-Drop TABLE cats_demo_four;
+Drop TABLE cats_depmo_four;
+
+
+--changeset mauricio_ramirezh:1
+CREATE TABLE coches(
+    breed VARCHAR(255),
+    name varchar(255),
+    edge varchar(255)
+);
+--rollback drop table coches; 
