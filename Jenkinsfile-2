@@ -1,17 +1,17 @@
 pipeline {
   agent {
-    docker { image 'liquibase/liquibase:4.4.2' }
+    docker { image 'liquibase/liquibase:latest' }
   }
   
   stages {
     stage('Status') {
       steps {
-        sh 'liquibase status --url="jdbc:postgresql://localhost:5432/postgres?user=postgres&password=password" --changeLogFile=my_app-wrapper.xml '
+        sh 'liquibase status --url="jdbc:postgresql://localhost:5432/postgres?currentSchema=Test?user=postgres&password=password" --changeLogFile=my_app-wrapper.xml '
       }
     }
     stage('Update') {
       steps {
-        sh 'liquibase update --url="jdbc:postgresql://localhost:5432/postgres?user=postgres&password=password" --changeLogFile=my_app-wrapper.xml'
+        sh 'liquibase update --url="jdbc:postgresql://localhost:5432/postgres?currentSchema=Test?user=postgres&password=password" --changeLogFile=my_app-wrapper.xml'
       }
     }
   }
