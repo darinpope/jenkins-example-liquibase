@@ -9,6 +9,7 @@ pipeline {
         sh 'liquibase status --changeLogFile=my_app-wrapper.xml'
       }
     }
+   }
   post {
     always {
       cleanWs()
