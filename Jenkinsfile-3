@@ -9,12 +9,6 @@ pipeline {
         sh 'liquibase status --changeLogFile=my_app-wrapper.xml'
       }
     }
-   // stage('Update') {
-   //   steps {
-   //     sh 'liquibase update --url="jdbc:postgresql://localhost:5432/postgres?currentSchema=Test?user=postgres&password=password" --changeLogFile=my_app-wrapper.xml'
-   //   }
-   // }
-  }
   post {
     always {
       cleanWs()
