@@ -36,6 +36,7 @@ pipeline {
         }
     }
     steps {
+            VERSION.split(',').first()
            sh '''
               echo "VERSION: ${VERSION}"
               liquibase  --changeLogFile=db.changelog-master.xml rollback ${VERSION}
