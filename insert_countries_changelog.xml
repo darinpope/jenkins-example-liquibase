@@ -21,7 +21,7 @@
             <column name="country_name"  value="FR"/>
             <column name="capital" value="PARIS"/>
             <column name="continent_code"  value="A2"/>
-            <column name="currency_code"  value="EURO"/>
+            <column name="currency_code"  value="EUR"/>
         </insert>      
          <insert tableName="countries">
             <column name="iso"  value="CC"/>
