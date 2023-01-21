@@ -23,23 +23,5 @@
             <column name="continent_code"  value="A2"/>
             <column name="currency_code"  value="EUR"/>
         </insert>      
-         <insert tableName="countries">
-            <column name="iso"  value="CC"/>
-            <column name="iso3" value="ERT"/>
-            <column name="iso_numeric" valueNumeric="3"/>
-            <column name="country_name"  value="SG"/>
-            <column name="capital" value="SINGAPORE"/>
-            <column name="continent_code" value="A3"/>
-            <column name="currency_code"  value="GSD"/>
-        </insert>  
-         <insert tableName="countries">
-            <column name="iso"  value="DD"/>
-            <column name="iso3" value="HJK"/>
-            <column name="iso_numeric" valueNumeric="4"/>
-            <column name="country_name"  value="JP"/>
-            <column name="capital" value="TOKYO"/>
-            <column name="continent_code" value="A4"/>
-            <column name="currency_code"  value="YEN"/>
-         </insert>    
     </changeSet>
 </databaseChangeLog>
