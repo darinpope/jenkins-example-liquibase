@@ -47,7 +47,19 @@ pipeline {
     }  
     
 } 
-  }
+
+  stage('set description') { 
+    steps {
+           script {
+            if (env.BRANCH_NAME != 'rollback') {
+             currentBuild.description = "ACTION: ${ACTION}, TAG ${BUILD_NUMBER}"
+           } else {
+              currentBuild.description = "ACTION: ${ACTION}, VERSION ${VERSION}"
+           }
+    }  
+    
+   } 
+}
   post {
     always {
       cleanWs()
