@@ -2,6 +2,7 @@ pipeline {
   agent {
     docker { image 'liquibase/liquibase:latest' }
   }
+  stages {
   stage('status') {
     when {
         expression {
@@ -43,6 +44,7 @@ pipeline {
     }  
     
 } 
+  }
   post {
     always {
       cleanWs()
