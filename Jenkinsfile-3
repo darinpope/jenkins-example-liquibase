@@ -2,14 +2,12 @@ pipeline {
   agent {
     docker { image 'liquibase/liquibase:latest' }
   }
-  
   stages {
     stage('Status') {
       steps {
         sh '''
         
-         liquibase status --changeLogFile=db.changelog-master.xml 
-         liquibase update --changeLogFile=db.changelog-master.xml 
+         liquibase ${ACTION} --changeLogFile=db.changelog-master.xml ${VERSION}
         
         '''
       }
