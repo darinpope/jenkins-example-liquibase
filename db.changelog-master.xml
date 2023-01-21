@@ -10,6 +10,6 @@
                         http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd 
                         http://www.liquibase.org/xml/ns/dbchangelog 
                         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
- <include file="countries_changelog.xml"/>
-  <!-- <include file="my_app-1.1.xml"/>  -->
+ <include file="countries_changelog.xml" relativeToChangelogFile="true"/>
+<include file="insert_countries_changelog.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

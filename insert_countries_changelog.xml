@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog logicalFilePath="com.finantix.mdl.adbk.core.example.data" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+    <changeSet id="SBNPCRM-3004-ARE-6" author="Marek Chmiel">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="countries"/>
+        </preConditions>     
+        <insert tableName="countries">
+            <column name="iso"  value="AA"/>
+            <column name="iso3" value="ABC"/>
+            <column name="iso_numeric" valueNumeric="1"/>
+            <column name="country_name"  value="VN"/>
+            <column name="capital" value="HANOI"/>
+            <column name="continent_code" value="AD01"/>
+            <column name="currency_code"  value="VND"/>
+        </insert>       
+         <insert tableName="countries">
+            <column name="iso"  value="BB"/>
+            <column name="iso3" value="GFD"/>
+            <column name="iso_numeric" valueNumeric="2"/>
+            <column name="country_name"  value="FR"
+            <column name="capital" value="PARIS"/>
+            <column name="continent_code"  value="AD02"/>
+            <column name="currency_code"  value="EURO"/>
+        </insert>      
+         <insert tableName="countries">
+            <column name="iso"  value="CC"/>
+            <column name="iso3" value="ERT"/>
+            <column name="iso_numeric" valueNumeric="3"/>
+            <column name="country_name"  value="SG"/>
+            <column name="capital" value="SINGAPORE"/>
+            <column name="continent_code" value="AD03"/>
+            <column name="currency_code"  value="GSD"/>
+        </insert>  
+         <insert tableName="countries">
+            <column name="iso"  value="DD"/>
+            <column name="iso3" value="HJK"/>
+            <column name="iso_numeric" valueNumeric="4"/>
+            <column name="country_name"  value="JP"/>
+            <column name="capital" value="TOKYO"/>
+            <column name="continent_code" value="AD03"/>
+            <column name="currency_code"  value="YEN"/>
+    </changeSet>
+</databaseChangeLog>
