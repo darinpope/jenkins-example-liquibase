@@ -14,7 +14,16 @@
             <column name="capital" value="HANOI"/>
             <column name="continent_code" value="A1"/>
             <column name="currency_code"  value="VND"/>
-        </insert>    
+        </insert> 
+        <insert tableName="countries">
+            <column name="iso"  value="TT"/>
+            <column name="iso3" value="TT"/>
+            <column name="iso_numeric" valueNumeric="10"/>
+            <column name="country_name"  value="VN"/>
+            <column name="capital" value="HANOI"/>
+            <column name="continent_code" value="A1"/>
+            <column name="currency_code"  value="VND"/>
+        </insert>     
          </rollback>   
     </changeSet>
 </databaseChangeLog>
