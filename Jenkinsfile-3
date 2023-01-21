@@ -36,7 +36,10 @@ pipeline {
         }
     }
     steps {
-           sh 'liquibase rollback --changeLogFile=db.changelog-master.xml --rollbackTag=${VERSION}'
+           sh '''
+              echo "VERSION: ${VERSION}"
+              liquibase  --changeLogFile=db.changelog-master.xml rollback ${VERSION}
+           '''
     }  
     
 } 
