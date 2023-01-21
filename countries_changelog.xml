@@ -26,7 +26,7 @@
             </column>
       </createTable>
        <rollback>
-         Drop table countries_test_rollback;
+         drop table countries_test_rollback;
        </rollback>
     </changeSet>
 </databaseChangeLog>
