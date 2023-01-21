@@ -16,6 +16,7 @@
                  <tableExists tableName="countries"/>
            </not>
         </preConditions>
+        <rollback>
         <createTable tableName="countries">
             <column autoIncrement="true" name="id" type="INT">
                 <constraints nullable="false" primaryKey="true"/>
