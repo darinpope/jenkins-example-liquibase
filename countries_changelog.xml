@@ -42,9 +42,6 @@
             <column name="currency_code" type="VARCHAR(3)">
                 <constraints nullable="false"/>
             </column>
-            <column name="post_code" type="VARCHAR(3)">
-                <constraints nullable="false"/>
-            </column>
       </createTable>
        </rollback>
     </changeSet>

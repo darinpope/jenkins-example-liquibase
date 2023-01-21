@@ -23,7 +23,6 @@
             <column name="capital" value="HANOI"/>
             <column name="continent_code" value="A1"/>
             <column name="currency_code"  value="VND"/>
-            <column name="post_code"  value="123"/>
         </insert>   
          </rollback>   
     </changeSet>
