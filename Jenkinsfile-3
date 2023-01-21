@@ -10,7 +10,7 @@ pipeline {
         }
     }
     steps {
-           sh 'liquibase status --changeLogFile=my_app-wrapper.xml'
+           sh 'liquibase status --changeLogFile=db.changelog-master.xml'
     }  
   }
   stage('tag') {
@@ -30,7 +30,7 @@ pipeline {
         }
     }
     steps {
-           sh 'liquibase update --changeLogFile=my_app-wrapper.xml'
+           sh 'liquibase update --changeLogFile=db.changelog-master.xml'
     }  
 
 }
