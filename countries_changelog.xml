@@ -13,9 +13,7 @@
     <changeSet author="thien" id="create-countries">
         <tagDatabase  tag="version_1"/>  
         <preConditions onFail="MARK_RAN">
-           <not>
                 <tableExists tableName="countries"/>
-         </not>
         </preConditions>
         <createTable tableName="countries">
             <column autoIncrement="true" name="id" type="INT">
