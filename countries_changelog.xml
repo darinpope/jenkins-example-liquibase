@@ -14,7 +14,7 @@
         <preConditions onFail="MARK_RAN">
            <not>
                  <tableExists tableName="countries"/>
-           <not/>
+           </not>
         </preConditions>
         <createTable tableName="countries">
             <column autoIncrement="true" name="id" type="INT">
