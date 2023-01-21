@@ -19,7 +19,7 @@ pipeline {
              sh 'liquibase tag ${BUILD_NUMBER}'
     }
   }
-  
+
   stage('update') {
     when {
         expression {
@@ -39,8 +39,8 @@ pipeline {
         }
     }
     steps {
-            VERSION=env.VERSION.split(',').first()
            sh '''
+              VERSION=$(echo ${VERSION} | sed s/,//g) 
               echo "VERSION: ${VERSION}"
               liquibase  --changeLogFile=db.changelog-master.xml rollback ${VERSION}
            '''
