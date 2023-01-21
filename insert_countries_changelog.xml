@@ -5,6 +5,7 @@
         <preConditions onFail="MARK_RAN">
             <tableExists tableName="countries"/>
         </preConditions>     
+         <rollback>
         <insert tableName="countries">
             <column name="iso"  value="TT"/>
             <column name="iso3" value="TT"/>
@@ -14,5 +15,6 @@
             <column name="continent_code" value="A9"/>
             <column name="currency_code"  value="TTT"/>
         </insert>  
+         </rollback>
     </changeSet>
 </databaseChangeLog>
