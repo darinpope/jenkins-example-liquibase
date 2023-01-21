@@ -4,11 +4,6 @@ pipeline {
   }
   stages {
   stage('status') {
-    when {
-        expression {
-            return env.ACTION == 'status';
-        }
-    }
     steps {
            sh 'liquibase status --changeLogFile=db.changelog-master.xml'
     }  
