@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
-    <changeSet id="insert8" author="thien">
+    <changeSet id="insert9" author="thien">
         <preConditions onFail="MARK_RAN">
             <tableExists tableName="countries"/>
         </preConditions>     
@@ -23,7 +23,16 @@
             <column name="capital" value="HANOI"/>
             <column name="continent_code" value="A1"/>
             <column name="currency_code"  value="VND"/>
-        </insert>   
+        </insert>
+        <insert tableName="countries">
+            <column name="iso"  value="TT"/>
+            <column name="iso3" value="ABC"/>
+            <column name="iso_numeric" valueNumeric="1"/>
+            <column name="country_name"  value="VN"/>
+            <column name="capital" value="HANOI"/>
+            <column name="continent_code" value="A1"/>
+            <column name="currency_code"  value="VND"/>
+        </insert>      
          </rollback>   
     </changeSet>
 </databaseChangeLog>
