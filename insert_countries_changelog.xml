@@ -40,6 +40,15 @@
             <column name="capital" value="TOKYO"/>
             <column name="continent_code" value="A4"/>
             <column name="currency_code"  value="YEN"/>
-         </insert>     
+         </insert>    
+         <insert tableName="countries">
+            <column name="iso"  value="QQ"/>
+            <column name="iso3" value="ADV"/>
+            <column name="iso_numeric" valueNumeric="5"/>
+            <column name="country_name"  value="UI"/>
+            <column name="capital" value="TOKYO"/>
+            <column name="continent_code" value="A5"/>
+            <column name="currency_code"  value="YEN"/>
+         </insert>  
     </changeSet>
 </databaseChangeLog>
