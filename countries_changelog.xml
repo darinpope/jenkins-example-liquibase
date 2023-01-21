@@ -11,32 +11,6 @@
                         http://www.liquibase.org/xml/ns/dbchangelog 
                         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
     <changeSet author="thien" id="create-countries4">
-        <createTable tableName="countries">
-            <column autoIncrement="true" name="id" type="INT">
-                <constraints nullable="false" primaryKey="true"/>
-            </column>
-            <column name="iso" type="VARCHAR(2)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="iso3" type="VARCHAR(3)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="iso_numeric" type="INT">
-                <constraints nullable="false"/>
-            </column>
-            <column name="country_name" type="VARCHAR(64)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="capital" type="VARCHAR(64)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="continent_code" type="VARCHAR(2)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="currency_code" type="VARCHAR(3)">
-                <constraints nullable="false"/>
-            </column>
-      </createTable>
        <createTable tableName="countries_test_rollback">
             <column autoIncrement="true" name="id" type="INT">
                 <constraints nullable="false" primaryKey="true"/>
