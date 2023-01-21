@@ -42,7 +42,7 @@ pipeline {
            sh '''
               VERSION=$(echo ${VERSION} | sed s/,//g) 
               echo "VERSION: ${VERSION}"
-              liquibase  --changeLogFile=db.changelog-master.xml rollback-sql ${VERSION}
+              liquibase  --changeLogFile=db.changelog-master.xml rollback ${VERSION}
            '''
     }  
     
