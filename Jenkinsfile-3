@@ -8,7 +8,17 @@ pipeline {
            sh 'liquibase status --changeLogFile=db.changelog-master.xml'
     }  
   } 
-  
+
+  stage('tag') {
+    when {
+        expression {
+            return env.ACTION == 'update';
+        }
+    }
+    steps {
+             sh 'liquibase tag ${BUILD_NUMBER}'
+    }
+  }  
 
   stage('update') {
     when {
@@ -20,16 +30,6 @@ pipeline {
            sh 'liquibase update --changeLogFile=db.changelog-master.xml'
     }  
 
-  }
-     stage('tag') {
-    when {
-        expression {
-            return env.ACTION == 'update';
-        }
-    }
-    steps {
-             sh 'liquibase tag ${BUILD_NUMBER}'
-    }
   }
 
   stage('rollback') {
