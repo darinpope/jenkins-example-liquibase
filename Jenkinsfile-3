@@ -2,20 +2,51 @@ pipeline {
   agent {
     docker { image 'liquibase/liquibase:latest' }
   }
-  stages {
-    stage('Status') {
-      steps {
-        sh '''
-         echo ${VERSION}
-         liquibase ${ACTION} --changeLogFile=db.changelog-master.xml ${VERSION}
-        
-        '''
-      }
+  stage('status') {
+    when {
+        expression {
+            return env.ACTION == 'status';
+        }
     }
-   }
+    steps {
+           sh 'liquibase status --changeLogFile=my_app-wrapper.xml'
+    }  
+  }
+  stage('tag') {
+    when {
+        expression {
+            return env.ACTION == 'update';
+        }
+    }
+    steps {
+             sh 'liquibase tag ${BUILD_NUMBER}'
+    }
+  stage('update') {
+    when {
+        expression {
+            return env.ACTION == 'update';
+        }
+    }
+    steps {
+           sh 'liquibase update --changeLogFile=my_app-wrapper.xml'
+    }  
+
+}
+  stage('rollback') {
+    when {
+        expression {
+            return env.ACTION == 'rollback';
+        }
+    }
+    steps {
+           sh 'liquibase rollback ${VERSION}'
+    }  
+    
+} 
   post {
     always {
       cleanWs()
     }
   }
+}
 }
