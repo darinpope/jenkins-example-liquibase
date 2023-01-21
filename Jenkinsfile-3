@@ -6,12 +6,12 @@ pipeline {
   stages {
     stage('Status') {
       steps {
-        sh '
+        sh '''
         
          liquibase status --changeLogFile=db.changelog-master.xml
          liquibase update --changeLogFile=db.changelog-master.xml
         
-        '
+        '''
       }
     }
    }
