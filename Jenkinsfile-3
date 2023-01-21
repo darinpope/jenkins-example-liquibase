@@ -51,9 +51,9 @@ pipeline {
   stage('set description') { 
     steps {
            script {
-            if (env.BRANCH_NAME == 'update') {
+            if (env.ACTION == 'update') {
              currentBuild.description = "ACTION: ${ACTION}, TAG: ${BUILD_NUMBER}"
-           } else if (env.BRANCH_NAME == 'rollback') {
+           } else if (env.ACTION == 'rollback') {
               currentBuild.description = "ACTION: ${ACTION}, TAG: ${VERSION}"
            } else {
               currentBuild.description = "ACTION: ${ACTION}" 
