@@ -10,7 +10,7 @@
                         http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd 
                         http://www.liquibase.org/xml/ns/dbchangelog 
                         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
-    <changeSet author="thien" id="create-countries1">
+    <changeSet author="thien" id="create-countries2">
         <preConditions onFail="MARK_RAN">
            <not>
                  <tableExists tableName="countries"/>
