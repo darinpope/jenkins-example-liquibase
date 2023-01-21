@@ -42,5 +42,6 @@
                 <constraints nullable="false"/>
             </column>
       </createTable>
+       </rollback>
     </changeSet>
 </databaseChangeLog>
