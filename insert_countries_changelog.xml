@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog logicalFilePath="com.finantix.mdl.adbk.core.example.data" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
-    <changeSet id="SBNPCRM-3004-ARE-6" author="Marek Chmiel">
+    <changeSet id="insert1" author="Thien">
         <preConditions onFail="MARK_RAN">
             <tableExists tableName="countries"/>
         </preConditions>     
@@ -11,7 +11,7 @@
             <column name="iso_numeric" valueNumeric="1"/>
             <column name="country_name"  value="VN"/>
             <column name="capital" value="HANOI"/>
-            <column name="continent_code" value="AD01"/>
+            <column name="continent_code" value="A1"/>
             <column name="currency_code"  value="VND"/>
         </insert>       
          <insert tableName="countries">
@@ -20,7 +20,7 @@
             <column name="iso_numeric" valueNumeric="2"/>
             <column name="country_name"  value="FR"/>
             <column name="capital" value="PARIS"/>
-            <column name="continent_code"  value="AD02"/>
+            <column name="continent_code"  value="A2"/>
             <column name="currency_code"  value="EURO"/>
         </insert>      
          <insert tableName="countries">
@@ -29,7 +29,7 @@
             <column name="iso_numeric" valueNumeric="3"/>
             <column name="country_name"  value="SG"/>
             <column name="capital" value="SINGAPORE"/>
-            <column name="continent_code" value="AD03"/>
+            <column name="continent_code" value="A3"/>
             <column name="currency_code"  value="GSD"/>
         </insert>  
          <insert tableName="countries">
@@ -38,7 +38,7 @@
             <column name="iso_numeric" valueNumeric="4"/>
             <column name="country_name"  value="JP"/>
             <column name="capital" value="TOKYO"/>
-            <column name="continent_code" value="AD03"/>
+            <column name="continent_code" value="A4"/>
             <column name="currency_code"  value="YEN"/>
          </insert>     
     </changeSet>
