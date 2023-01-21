@@ -6,7 +6,7 @@ pipeline {
     stage('Status') {
       steps {
         sh '''
-        
+         echo ${VERSION}
          liquibase ${ACTION} --changeLogFile=db.changelog-master.xml ${VERSION}
         
         '''
