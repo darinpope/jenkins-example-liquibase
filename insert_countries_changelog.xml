@@ -18,7 +18,7 @@
             <column name="iso"  value="BB"/>
             <column name="iso3" value="GFD"/>
             <column name="iso_numeric" valueNumeric="2"/>
-            <column name="country_name"  value="FR"
+            <column name="country_name"  value="FR"/>
             <column name="capital" value="PARIS"/>
             <column name="continent_code"  value="AD02"/>
             <column name="currency_code"  value="EURO"/>
