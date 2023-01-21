@@ -8,8 +8,8 @@ pipeline {
       steps {
         sh '''
         
-         liquibase status --changeLogFile=db.changelog-master.xml
-         liquibase update --changeLogFile=db.changelog-master.xml
+         liquibase status --changeLogFile=db.changelog-master.xml --logLevel=debug
+         liquibase update --changeLogFile=db.changelog-master.xml  --logLevel=debug
         
         '''
       }
