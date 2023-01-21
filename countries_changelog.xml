@@ -11,9 +11,10 @@
                         http://www.liquibase.org/xml/ns/dbchangelog 
                         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
     <changeSet author="thien" id="create-countries">
-        <tagDatabase  tag="version_1"/>  
         <preConditions onFail="MARK_RAN">
-                <tableExists tableName="countries"/>
+           <not>
+                 <tableExists tableName="countries"/>
+           <not/>
         </preConditions>
         <createTable tableName="countries">
             <column autoIncrement="true" name="id" type="INT">
