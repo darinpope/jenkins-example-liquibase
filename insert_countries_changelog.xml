@@ -10,8 +10,10 @@
             <column name="iso2" value="TTT"/>
             <column name="iso_numeric1" valueNumeric="100"/>
         </insert>  
-        <!-- <rollback>
-           
-         </rollback> -->
+        <rollback>
+            <delete tableName="countries_test_3">
+                <where>iso_numeric1 = '100'</where>
+            </delete>
+        </rollback>
     </changeSet>
 </databaseChangeLog>
