@@ -1,0 +1,73 @@
+pipeline {
+  agent {
+    docker { image 'liquibase/liquibase:latest' }
+  }
+  stages {
+  stage('status') {
+    steps {
+           sh 'liquibase status --changeLogFile=db.changelog-master.xml'
+    }  
+  } 
+
+  stage('tag') {
+    when {
+        expression {
+            return env.ACTION == 'update';
+        }
+    }
+    steps {
+             sh 'liquibase tag ${BUILD_NUMBER}'
+    }
+  }  
+
+  stage('update') {
+    when {
+        expression {
+            return env.ACTION == 'update';
+        }
+    }
+    steps {
+           sh 'liquibase update --changeLogFile=db.changelog-master.xml'
+    }  
+
+  }
+
+
+  stage('rollback') {
+    when {
+        expression {
+            return env.ACTION == 'rollback';
+        }
+    }
+    steps {
+           sh '''
+              VERSION=$(echo ${VERSION} | sed s/,//g) 
+              echo "VERSION: ${VERSION}"
+              liquibase  --changeLogFile=db.changelog-master.xml rollback ${VERSION}
+           '''
+    }  
+    
+} 
+
+  stage('set description') { 
+    steps {
+           script {
+            if (env.ACTION == 'update') {
+             currentBuild.description = "ACTION: ${ACTION}, TAG: ${BUILD_NUMBER}"
+           } else if (env.ACTION == 'rollback') {
+              currentBuild.description = "ACTION: ${ACTION}, TAG: ${VERSION}"
+           } else {
+              currentBuild.description = "ACTION: ${ACTION}" 
+           }
+    }  
+    
+   } 
+}
+  }
+  post {
+    always {
+      cleanWs()
+    }
+  }
+
+}

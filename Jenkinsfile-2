@@ -1,21 +1,19 @@
 pipeline {
   agent {
-    docker { image 'liquibase/liquibase:4.4.2' }
+    docker { image 'liquibase/liquibase:latest' }
   }
-  environment {
-    MARIADB_CREDS=credentials('mariadb-credentials')
-  }
+  
   stages {
     stage('Status') {
       steps {
-        sh 'liquibase status --url="jdbc:mysql://192.168.32.11:3306/my_app" --changeLogFile=my_app-wrapper.xml --username=$MARIADB_CREDS_USR --password=$MARIADB_CREDS_PSW'
+        sh 'liquibase status --url="jdbc:postgresql://192.168.59.107:5432/postgres?user=postgres&password=password" --changeLogFile=my_app-wrapper.xml '
       }
     }
-    stage('Update') {
-      steps {
-        sh 'liquibase update --url="jdbc:mysql://192.168.32.11:3306/my_app" --changeLogFile=my_app-wrapper.xml --username=$MARIADB_CREDS_USR --password=$MARIADB_CREDS_PSW'
-      }
-    }
+   // stage('Update') {
+   //   steps {
+   //     sh 'liquibase update --url="jdbc:postgresql://localhost:5432/postgres?currentSchema=Test?user=postgres&password=password" --changeLogFile=my_app-wrapper.xml'
+   //   }
+   // }
   }
   post {
     always {

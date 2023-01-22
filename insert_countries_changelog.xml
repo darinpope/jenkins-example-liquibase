@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+    <changeSet id="insert15" author="thien">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="countries_test_3"/>
+        </preConditions>     
+        <insert tableName="countries_test_3">
+            <column name="iso1"  value="TT"/>
+            <column name="iso2" value="TTT"/>
+            <column name="iso_numeric1" valueNumeric="100"/>
+        </insert>  
+        <rollback>
+            <delete tableName="countries_test_3">
+                <where>iso_numeric1 = '100'</where>
+            </delete>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>
