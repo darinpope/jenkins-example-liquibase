@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
-    <changeSet id="insert14" author="thien">
+    <changeSet id="insert15" author="thien">
         <preConditions onFail="MARK_RAN">
-            <tableExists tableName="countries"/>
+            <tableExists tableName="countries_test_3"/>
         </preConditions>     
          <rollback>
-        <insert tableName="countries">
-            <column name="iso"  value="TT"/>
-            <column name="iso3" value="TT"/>
-            <column name="iso_numeric" valueNumeric="100"/>
-            <column name="country_name"  value="VN"/>
-            <column name="capital" value="HANOI"/>
-            <column name="continent_code" value="A9"/>
-            <column name="currency_code"  value="TTT"/>
+        <insert tableName="countries_test_3">
+            <column name="iso1"  value="TT"/>
+            <column name="iso2" value="TTT"/>
+            <column name="iso_numeric1" valueNumeric="100"/>
         </insert>  
-         </rollback>
+        <!-- <rollback>
+           
+         </rollback> -->
     </changeSet>
 </databaseChangeLog>

@@ -25,8 +25,8 @@
                 <constraints nullable="false"/>
             </column>
       </createTable>
-     <rollback>
+     <!-- <rollback>
 		<dropTable tableName="countries_test_3"/>
-	  </rollback>
+	  </rollback> -->
     </changeSet>
 </databaseChangeLog>
