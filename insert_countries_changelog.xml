@@ -5,7 +5,6 @@
         <preConditions onFail="MARK_RAN">
             <tableExists tableName="countries_test_3"/>
         </preConditions>     
-         <rollback>
         <insert tableName="countries_test_3">
             <column name="iso1"  value="TT"/>
             <column name="iso2" value="TTT"/>
