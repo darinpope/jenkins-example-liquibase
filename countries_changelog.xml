@@ -10,8 +10,8 @@
                         http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd 
                         http://www.liquibase.org/xml/ns/dbchangelog 
                         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
-    <changeSet author="thien" id="create-countries5">
-       <createTable tableName="countries_test">
+    <changeSet author="thien" id="create-countries6">
+       <createTable tableName="countries_test_1">
             <column autoIncrement="true" name="id" type="INT">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
@@ -26,7 +26,7 @@
             </column>
       </createTable>
      <rollback>
-		<dropTable tableName="countries_test"/>
+		<dropTable tableName="countries_test_1"/>
 	  </rollback>
     </changeSet>
 </databaseChangeLog>
