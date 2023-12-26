@@ -8,12 +8,12 @@ pipeline {
   stages {
     stage('Status') {
       steps {
-        sh 'liquibase status --url="jdbc:mysql://54.179.224.147:3306/my_app?autoReconnect=true'&'useSSL=false" --changeLogFile=my_app-wrapper.xml --username=liquibase --password=passworD@123'
+        sh 'liquibase status --url="jdbc:mysql://54.179.224.147:3306/my_app?autoReconnect=true'&'useSSL=false" --changeLogFile=my_app-wrapper.xml --username=$MARIADB_CREDS_USR --password=$MARIADB_CREDS_PSW'
       }
     }
     stage('Update') {
       steps {
-        sh 'liquibase update --url="jdbc:mysql://54.179.224.147:3306/my_app?autoReconnect=true" --changeLogFile=my_app-wrapper.xml --username=$MARIADB_CREDS_USR --password=$MARIADB_CREDS_PSW'
+        sh 'liquibase update --url="jdbc:mysql://54.179.224.147:3306/my_app?autoReconnect=true'&'useSSL=false" --changeLogFile=my_app-wrapper.xml --username=$MARIADB_CREDS_USR --password=$MARIADB_CREDS_PSW'
       }
     }
   }
