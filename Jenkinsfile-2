@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Status') {
       steps {
-        sh 'liquibase status --url="jdbc:mysql://localhost:3306/my_app" --changeLogFile=my_app-wrapper.xml --username=$MARIADB_CREDS_USR --password=$MARIADB_CREDS_PSW'
+        sh 'liquibase status --url="jdbc:mysql://localhost:3306/my_app" --changeLogFile=my_app-wrapper.xml --username="root" --password="Password@123"'
       }
     }
     stage('Update') {
