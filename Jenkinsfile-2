@@ -1,5 +1,6 @@
 pipeline {
-  docker { image 'liquibase/liquibase:4.4.2' }
+  agent {
+    docker { image 'liquibase/liquibase:4.4.2' }
   }
   environment {
     MARIADB_CREDS=credentials('mysql-db')
